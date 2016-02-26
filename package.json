@@ -1,0 +1,11 @@
+{
+  "name": "cia-dark-web",
+  "version": "1.0.0",
+  "description": "Fake CIA website that takes the user on an adventure",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Viorel",
+  "license": "ISC"
+}
