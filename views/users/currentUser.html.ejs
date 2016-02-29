@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>currentUser</title>
+  </head>
+  <body>
+    <div>
+      <% if (user) {%>
+        <h1>Welcome Back Agent <%= user.codename %></h1>
+      <% } %>
+    </div>
+    <div>
+    <div class="loop" id="userLoop">
+        <div class="info">
+          <ul>
+            <li>Codename: <%=user.codename%></li>
+            <li>Email: <%=user.email%></li>
+            <li>Password: <%=user.password_digest%></li>
+
+          </ul>
+        </div>
+
+    </div>
+Add Comment C
+      <h3><%= user.codename %></h3>
+      <form method="POST" action="<%=user.id + '?_method=DELETE' %>">
+        <a href="<%=user.id + '/edit'%>" class="currentUserEdit" role="button">Edit</a>
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+  </body>
+</html>

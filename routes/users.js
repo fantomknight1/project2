@@ -1,24 +1,27 @@
+
 var express = require('express');
 var users = express.Router();
 var bodyParser = require('body-parser');
 var db = require('./../db/pg');
+var path = require('path');
+var userIdRoute = require( path.join(__dirname, '/userID'));
+users.use('/:userID', userIdRoute);
 
-
-users.post('/', db.createUser, function(req, res){
+users.post('/signup', db.createUser, function(req, res){
   res.redirect('/');
-})
+});
 
 // users.route('/')
 users.get('/signup', function(req, res) {
-  res.render('users/new.html.ejs')
-})
+  res.render('users/new.html.ejs');
+});
 
-users.get('/login', function(req, res) {
+users.route('/login')
+  .get(function(req, res) {
   res.render('users/login.html.ejs');
-})
-
-users.post('/login', db.loginUser, function(req, res) {
-  req.session.user = res.rows
+  })
+  .post(db.loginUser, function(req, res) {
+  req.session.user = res.rows;
 
   // when you redirect you must force a save due to asynchronisity
   // https://github.com/expressjs/session/issues/167 **
@@ -26,15 +29,25 @@ users.post('/login', db.loginUser, function(req, res) {
   // the destination page well before we finished sending the response to the client."
 
   req.session.save(function() {
-    res.redirect('/')
+    res.redirect('/users/userHome' + req.session.user.id);
   });
-})
+});
+
+users.route('/userHome:userID')
+.get(function(req,res){
+  res.render('users/userHome.html.ejs', { user : req.session.user});
+});
+
+
+  // app.get('/', function(req, res) {
+  //   res.render('home.html.ejs', { user : req.session.user});
+  // });
 
 users.delete('/logout', function(req, res) {
   req.session.destroy(function(err){
     res.redirect('/');
-  })
-})
+  });
+});
 
 
 

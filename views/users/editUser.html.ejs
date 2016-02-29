@@ -1,0 +1,13 @@
+<!doctype html>
+
+<head>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Edit massage #<span><%= profiles.id %></span></h2>
+    <form action=":usersID/edit?_method=PUT" method="POST">
+      <% include _form_fields %>
+    </form>
+  </div>
+</body>
