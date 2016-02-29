@@ -16,17 +16,16 @@
           <ul>
             <li>Codename: <%=user.codename%></li>
             <li>Email: <%=user.email%></li>
-            <li>Password: <%=user.password_digest%></li>
 
           </ul>
         </div>
 
     </div>
-Add Comment C
-      <h3><%= user.codename %></h3>
       <form method="POST" action="<%=user.id + '?_method=DELETE' %>">
-        <a href="<%=user.id + '/edit'%>" class="currentUserEdit" role="button">Edit</a>
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="/users/<%=user.id%>/edit" class="currentUserEdit" role="button">Edit</a>
+      </form>
+      <form action="/users/<%= user.id %>/profile/?_method=DELETE" method="POST">
+        <input type="submit" value="Delete">
       </form>
     </div>
   </body>

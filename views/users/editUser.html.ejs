@@ -5,9 +5,19 @@
 
 <body>
   <div class="container">
-    <h2>Edit massage #<span><%= profiles.id %></span></h2>
-    <form action=":usersID/edit?_method=PUT" method="POST">
-      <% include _form_fields %>
+    <h2>Update Profile, Agent #<span><%= user.codename %></span></h2>
+    <div>
+      <ul>
+        <li><%= user.codename%></li>
+        <li><%= user.email%></li>
+      </ul>
+    </div>
+    <form action="edit/?_method=PUT" method="POST">
+      <label for="codename">Codename</label>
+      <input type="text" name="codename" placeholder="word" value="<%= user.codename %>">
+      <label for="email">Email</label>
+      <input type="text" name="email" placeholder="word" value="<%= user.email %>">
+      <input type="submit" value="Edit" class="edit">
     </form>
   </div>
 </body>

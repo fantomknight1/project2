@@ -15,10 +15,10 @@
     <ul class="nav navbar-nav">
       <a href="/">Disconnect</a>
       <a href="/users/userHome/"+<%= user.id %>>Home</a>
-      <a href="/users/userMainframe/" + req.session.user.id>Mainframe</a>
-      <a href="/users/newUserSighting/" + req.session.user.id>New Sighting</a>
-      <a href="/users/mail/" + req.session.user.id>Mail</a>
-      <a href="/users/userHome/profile/" >Profile</a>
+      <a href="/users/userMainframe/" + user.id>Mainframe</a>
+      <a href="/users/newUserSighting/" + user.id>New Sighting</a>
+      <a href="/users/mail/" + user.id>Mail</a>
+      <a href="/users/<%= user.id %>/profile">Profile</a>
       <form method="post" action=":usersID/logout?_method=DELETE">
         <button>Disconnect</button>
       </form>

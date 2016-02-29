@@ -114,6 +114,58 @@ function showProfile(req, res, next){
   });
 };
 
+function updateProfile(req, res, next) {
+  // eval(pry.it)
+  console.log('initiate update')
+  pg.connect(connectionString, function(err, client, done) {
+    if (err) {
+      done();
+      console.log(err);
+      return res.status(500).json({success: false, data: err});
+    }
+
+    var query = client.query("UPDATE users SET codename = $1, email=$2 WHERE id=$3", [req.body.codename, req.body.email, req.params.id], function(err, results) {
+      console.log('info updated')
+      done();
+      // console.log('saveUser');
+      if (err) {
+        return console.error('error running query', err);
+      }
+      // if (results.rows.length === 0) {
+      //   res.status(204).json({success: true, data: 'no content'});
+      // } else if (bcrypt.compareSync(password, results.rows[0].password_digest)) {
+      //   res.rows = results.rows[0];
+      //   next();
+      // }
+      next();
+    });
+  });
+}
+
+function deleteUser (req, res, next) {
+  pg.connect(connectionString, function (err, client, done) {
+    if (err) {
+      done();
+      console.log(err);
+      res.status(500).json({success: false, data: err});
+    }
+
+
+    client.query('DELETE FROM users WHERE id = $1', [req.params.id], function(err, results) {
+      done();
+      if (err) {
+        console.error('Error with query', err);
+      }
+
+      next();
+    });
+
+  });
+
+};
+
+module.exports.deleteUser = deleteUser;
+module.exports.updateProfile = updateProfile;
 module.exports.showProfile = showProfile;
 module.exports.createUser = createUser;
 module.exports.loginUser = loginUser;
