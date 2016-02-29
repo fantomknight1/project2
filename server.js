@@ -2,6 +2,7 @@ pry = require('pryjs');
 'use strict'
 var express = require('express');
 var morgan = require('morgan');
+var dotenv = require('dotenv').config();
 var bodyParser = require('body-parser');
 var pg = require('pg');
 var session = require('express-session');
@@ -14,13 +15,12 @@ var imageRouter = require( path.join(__dirname, './routes/images'));
 var db = require('./db/pg');
 var app = express();
 
-if (process.env.ENVIRONMENT === 'production'){
-  var config =process.env.DATABASE_URL;
-} else{
-  var connectionString = "postgres://Viorel:" +process.env.DB_PASSWORD +"@localhost/sessions_users";
 
-  };
-}
+var connectionString =process.env.DATABASE_URL;
+  // var connectionString = "postgres://Viorel:" +process.env.DB_PASSWORD +"@localhost/sessions_users";
+
+  // };
+// }
 
 app.use(session({
   store: new pgSession({

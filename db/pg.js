@@ -3,11 +3,12 @@ var pg = require('pg');
 var bcrypt = require('bcrypt');
 var salt = bcrypt.genSaltSync(10);
 var session = require('express-session');
-if (process.env.ENVIRONMENT === 'production'){
-  var config =process.env.DATABASE_URL;
-} else{
-  var connectionString = "postgres://Viorel:" +process.env.DB_PASSWORD +"@localhost/sessions_users";
-}
+
+// if (process.env.ENVIRONMENT === 'production'){
+var connectionString =process.env.DATABASE_URL;
+// } else{
+//   var connectionString = "postgres://Viorel:" +process.env.DB_PASSWORD +"@localhost/sessions_users";
+// }
 
 
 function loginUser(req, res, next) {
