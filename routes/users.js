@@ -54,18 +54,18 @@ users.route('/:id')
 
 users.route('/:id/edit')
   .get(db.showProfile, function(req, res) {
-    res.render('users/editUser.html.ejs', { user : req.session.user, posts: res.rows, userEdit: res.profiles[0]});
+    res.render('users/editUser.html.ejs', { user : req.session.user, userEdit: res.profiles[0]});
   })
   .put(db.updateProfile, function(req, res){
     console.log('updated info')
-    res.status(303).redirect('/users/'+ req.session.user.id +'/profile');
+    res.status(303).redirect('/users/'+ req.session.user.id);
     console.log('redirected')
   });
 
 users.route('/:id/profile')
   .get(db.showProfile, function(req,res){
     console.log('getProfile')
-    res.render('users/currentUser.html.ejs', { user : req.session.user, posts: res.rows});
+    res.render('users/currentUser.html.ejs', { user : req.session.user});
   });
 
 users.route('/:id/profile/')
