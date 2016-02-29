@@ -4,7 +4,6 @@ var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var pg = require('pg');
-var connectionString = "postgres://Viorel:DB_Pass@localhost/sessions_users";
 var session = require('express-session');
 var pgSession = require('connect-pg-simple')(session);
 var path = require('path');
@@ -18,12 +17,8 @@ var app = express();
 if (process.env.ENVIRONMENT === 'production'){
   var config =process.env.DATABASE_URL;
 } else{
-  var connectionString = {
-    host: process.env.DB_HOST,
-    Port: process.env.DB_PORT,
-    database: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS
+  var connectionString = "postgres://Viorel:" +process.env.DB_PASSWORD +"@localhost/sessions_users";
+
   };
 }
 

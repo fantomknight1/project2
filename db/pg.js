@@ -1,18 +1,12 @@
 var pg = require('pg');
-var connectionString = "postgres://Viorel:DB_Pass@localhost/sessions_users";
+
 var bcrypt = require('bcrypt');
 var salt = bcrypt.genSaltSync(10);
 var session = require('express-session');
 if (process.env.ENVIRONMENT === 'production'){
   var config =process.env.DATABASE_URL;
 } else{
-  var connectionString = {
-    host: process.env.DB_HOST,
-    Port: process.env.DB_PORT,
-    database: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS
-  };
+  var connectionString = "postgres://Viorel:" +process.env.DB_PASSWORD +"@localhost/sessions_users";
 }
 
 
