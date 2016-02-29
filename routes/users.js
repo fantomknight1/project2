@@ -9,7 +9,6 @@ var path = require('path');
 // var userIdRoute = require( path.join(__dirname, '/userID'));
 // users.use('/:userID', userIdRoute);
 
-// users.route('/')
 users.route('/signup')
   .get(function(req, res) {
     res.render('users/new.html.ejs');
