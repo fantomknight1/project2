@@ -5,17 +5,7 @@ var bodyParser = require('body-parser');
 var db = require('./../db/pg');
 var path = require('path');
 
-if (process.env.ENVIRONMENT === 'production'){
-  var config =process.env.DATABASE_URL;
-} else{
-  var config = {
-    host: process.env.DB_HOST,
-    Port: process.env.DB_PORT,
-    database: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS
-  };
-}
+
 // var userIdRoute = require( path.join(__dirname, '/userID'));
 // users.use('/:userID', userIdRoute);
 

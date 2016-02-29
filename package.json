@@ -4,7 +4,8 @@
   "description": "Fake CIA website that takes the user on an adventure",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "jshintConfig": {
   "node": true,

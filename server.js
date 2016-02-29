@@ -15,6 +15,18 @@ var imageRouter = require( path.join(__dirname, './routes/images'));
 var db = require('./db/pg');
 var app = express();
 
+if (process.env.ENVIRONMENT === 'production'){
+  var config =process.env.DATABASE_URL;
+} else{
+  var config = {
+    host: process.env.DB_HOST,
+    Port: process.env.DB_PORT,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS
+  };
+}
+
 app.use(session({
   store: new pgSession({
     pg : pg,
