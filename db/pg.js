@@ -6,7 +6,7 @@ var session = require('express-session');
 if (process.env.ENVIRONMENT === 'production'){
   var config =process.env.DATABASE_URL;
 } else{
-  var config = {
+  var connectionString = {
     host: process.env.DB_HOST,
     Port: process.env.DB_PORT,
     database: process.env.DB_NAME,
