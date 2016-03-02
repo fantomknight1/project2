@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Authentications</title>
-  </head>
-  <body>
-    <h1>Enter Your Credentials</h1>
-    <form action="/users/signup" method="post">
-      <div>
-        <label for="codename">Codename</label>
-        <input type="text" name="codename">
-      </div>
-
-      <div>
-        <label for="email">email</label>
-        <input type="text" name="email">
-      </div>
-
-      <div>
-        <label for="password">password</label>
-        <input type="password" name="password">
-      </div>
-
-      <input type="submit" value="Submit">
-    </form>
-  </body>
+  <div class="everything" id="newEverything">
+    <head>
+      <meta charset="UTF-8">
+      <title>Authentications</title>
+      <link rel="stylesheet" href="../../css/styles.css">
+    </head>
+    <div class="allBody" id="newUserBody">
+      <body class="container" id="newContainer">
+        <div class="info" id="newInfo">
+          <div id="newUserH1">
+            <h1>Enter Your Credentials</h1>
+          </div>
+          <div id="signupForm">
+            <form action="/users/signup" method="post">
+              <div class="codename" id="newCodename">
+                <label for="codename">Codename:</label>
+                <input class="securityInput" type="text" name="codename">
+              </div>
+              <div class="email" id="newEmail">
+                <label for="email">Email:</label>
+                <input class="securityInput" type="text" name="email">
+              </div>
+              <div class="password" id="newPassword">
+                <label for="password">Password:</label>
+                <input class="securityInput" type="password" name="password">
+              </div>
+              <input class="securityInput" type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="newImage" id="securityImage"></div>
+        </div>
+      </body>
+    </div>
+  </div>
 </html>

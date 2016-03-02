@@ -1,31 +1,257 @@
-html{
-  background: url("../images/ciaLogin.jpg") no-repeat center center fixed;
+
+#homeEverything{
+  background: url("../images/ciaMap4.jpg");
   background-size: cover;
-  vertical-align: center;
+  display: flex;
+  justify-content: center;
+  height: 99vh;
+  width: 99vw;
+  text-align: center;
+  align-items: flex-end;
+}
+.logoBox{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.securityA:link,
+  .securityA:visited {
+    background-color: rgb(40, 40, 40);;
+    opacity: 0.8;
+    color: green;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .securityA:hover {
+    background-color: white;
+    opacity: 0.8;
+    color: green;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+#ciaLogo{
+  background: url('../images/ciaSeal.png') no-repeat center;
+  background-size: cover;
+  height: 300px;
+  width: 300px;
+  align-items: center;
+}
+.welcomeForm{
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+#logoutButton{
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.securitybutton[type=text]{
+  background-color: rgba(100, 100, 100, 0.6);
+  border-radius: 7px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+#newEverything {
+  background: url("../images/ciaMap4.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  height: 99vh;
+  width: 99vw;
+  text-align: center;
+  align-items: center;
+}
+#newInfo {
+  height: 300px;
+  width: 99vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#newUserH1{
+  margin-bottom: 20px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  color: green;
+}
+#signupForm{
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  color: green;
+  align-content: space-between;
+}
+#newEmail{
+  margin-left: 27px;
+}
+#newPassword{
+  margin-bottom: 10px;
+}
+.securityInput[type=text]{
+  background-color: rgba(50, 50, 50, 0.5);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  color: green;
   text-align: center;
 }
-.allBody{
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0px;
-  left:0px;
-
+.securityInput[type=password]{
+  background-color: rgba(50, 50, 50, 0.5);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  color: green;
+  text-align: center;
 }
-.container {
-  display: block;
+.securityInput[type=submit]{
+  margin-top: 15px;
+  margin-left: 100px;
+  background-color: rgba(100, 100, 100, 0.6);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+#loginEverything {
+  background: url("../images/greenBackground.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content:space-around;
+  height: 99vh;
+  width: 99vw;
+  text-align: center;
+  align-items: center;
+}
+#loginForm{
+  height: 300px;
+  width: 99vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+#loginSubForm{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  color: green;
+  align-content: space-between;
+}
+#loginCircleScanner{
   height: 150px;
-  width: 200px;
-  opacity:0.8;
-  background-color:white;
-  text-align: center;
-  background-color: rgba(255, 0, 0, 0);
-  /*vertical-align: middle;*/
-};
-
-.welcomeForm {
-  text-align: center;
-  /*margin: 0 auto;*/
+  width: 150px;
+  border-radius: 50px;
 }
-/*height: 1600px;
-width: 2560px;*/
+#loginSoundWaves{
+  margin-top: 20px;
+  margin-left: 100px;
+  height: 7vh;
+  width: 70vw;
+}
+#navbarUL{
+  display: flex;
+  justify-content:center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.navLI {
+    float: center;
+    border-right:1px solid #bbb;
+}
+.navLI:last-child {
+    border-right: none;
+}
+.navA:link,
+  .navA:visited {
+    background-color: rgb(40, 40, 40);;
+    opacity: 1;
+    color: green;
+    padding: 3px 4vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .navA:hover {
+    background-color: black;
+    opacity: 1;
+    color: green;
+    padding: 3px 4vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+#userHomeEverything{
+  background: url("../images/greenBackground6.jpg") no-repeat center;
+  background-size: cover;
+  height: 99vh;
+  width: 99vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#userHomeBody{
+  background: url("../images/blackBackground.jpg") no-repeat center;
+  background-size: cover;
+  height: 75vh;
+  width: 99vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+#userHomeH1{
+  color: green;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-weight: bold;
+}
+#userHomeGadgets{
+  margin-top: 75px;
+  display: flex;
+  justify-content:flex-end;
+  height: 150px;
+  width: 80vw;
+}
+#mapScanGif {
+  margin-right: 2px;
+  height:150px;
+  width: 225px;
+}
+#worldScanGif {
+  height:150px;
+  width: 130px;
+}
+#userHomeGadgets2{
+  margin-top: 5px;
+  display: flex;
+  justify-content:flex-end;
+  height: 30px;
+  width: 80vw;
+}
+#soundWaveGif{
+  width: 357px;
+  height: 30px;
+}

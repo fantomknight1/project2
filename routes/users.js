@@ -6,6 +6,7 @@ var db = require('./../db/pg');
 var path = require('path');
 
 
+
 // var userIdRoute = require( path.join(__dirname, '/userID'));
 // users.use('/:userID', userIdRoute);
 
@@ -64,8 +65,10 @@ users.route('/:id/profile/')
 
 users.route('/logout')
   .delete(function(req, res) {
+    console.log("before delete", req.session.user)
     req.session.destroy(function(err){
       res.redirect('/');
+      console.log("after delete", req.session.user)
     });
   });
 

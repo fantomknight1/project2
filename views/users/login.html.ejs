@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <form action="/users/login" method="post">
-    <div>
-      <label for="codename">codename</label>
-      <input type="text" name="codename">
+  <div class="everything" id="loginEverything">
+    <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+      <link rel="stylesheet" href="../../css/styles.css">
+    </head>
+    <div class=allBody id=loginBody>
+      <body>
+        <div id="loginForm">
+          <div id="loginSubForm">
+          <form action="/users/login" method="post">
+            <div class="codename" id="loginCodename">
+              <label for="codename">Codename</label>
+              <input class="securityInput" type="text" name="codename">
+            </div>
+
+            <div class="password" id="newPassword">
+              <label for="password">Password</label>
+              <input class="securityInput" type="password" name="password">
+            </div>
+            <input class="securityInput" type="submit" value="Submit">
+          </form>
+          <img id="loginCircleScanner" src="../images/gifCircleScan.gif">
+          </div>
+          <img id="loginSoundWaves" src="../images/gifSoundWaves2.gif">
+        </div>
+      </body>
     </div>
-
-    <div>
-      <label for="password">password</label>
-      <input type="text" name="password">
-    </div>
-
-    <input type="submit" value="Submit">
-  </form>
-  <img src="http://preloaders.net/preloaders/11/Blurred%20lines.gif">
-
-</body>
+  </div>
 </html>
+
+
+<!-- http://preloaders.net/preloaders/11/Blurred%20lines.gif -->

@@ -1,29 +1,37 @@
-<nav class="navbar">
-<div class="container">
-  <div class="navbar-header">
-    <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> -->
-            <!-- <span class="sr-only">Toggle navigation</span> -->
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <!-- <a class="navbar-brand" href="#">Agent <%=user.codename%></a> -->
+<!DOCTYPE html>
+<html lang="en">
+  <div class="everything" id="navEverything">
+    <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+      <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <nav class="navbar">
+    <div class="container" id="navContainer">
+      <div class="navbar-header">
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> -->
+                <!-- <span class="sr-only">Toggle navigation</span> -->
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="#">Agent <%=user.codename%></a> -->
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav" id="navbarUL">
+          <li class="navLI"><a class="navA" href="/users/<%= user.id %>">Home</a></li>
+          <li class="navLI"><a class="navA" href="/users/userMainframe/" + user.id>Mainframe</a></li>
+          <li class="navLI"><a class="navA" href="/users/newUserSighting/" + user.id>New Sighting</a></li>
+          <li class="navLI"><a class="navA" href="/users/mail/" + user.id>Mail</a></li>
+          <li class="navLI"><a class="navA" href="/users/<%= user.id %>/profile">Profile</a></li>
+          <form method="post" action=":usersID/logout?_method=DELETE">
+            <li class="navLI"><a class="navA" href="/">Disconnect</a></li>
+          </form>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+    </nav>
   </div>
-  <div id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
-      <a href="/">Disconnect</a>
-      <a href="/users/userHome/"+<%= user.id %>>Home</a>
-      <a href="/users/userMainframe/" + user.id>Mainframe</a>
-      <a href="/users/newUserSighting/" + user.id>New Sighting</a>
-      <a href="/users/mail/" + user.id>Mail</a>
-      <a href="/users/<%= user.id %>/profile">Profile</a>
-      <form method="post" action=":usersID/logout?_method=DELETE">
-        <button>Disconnect</button>
-      </form>
-
-    </ul>
-  </div><!--/.nav-collapse -->
-</div>
-</nav>
+</html>

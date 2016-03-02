@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/styles.css">
-  </head>
-  <div class=allBody id=homeBody>
-    <body class ="container" id="homeContainer">
-      <div class="welcomeForm">
-        <div class="image" id="CIA Logo">
-          image
-        </div>
-
-        <div class="homeLink" id="signupLink">
-          <a href="/users/signup">Create Authentication</a>
-        </div>
-        <div class="homeLink" id="loginLink">
-          <a href="/users/login">Login</a>
-        </div>
-        <divclass="buttonForm" id="logoutButton">
-          <form method="post" action="users/logout?_method=DELETE">
-            <button>logout</button>
-          </form>
-        </div>
-        <div>
-          <a href="/images">images</a>
-        </div>
+  <div class="everything" id="homeEverything">
+    <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+      <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <div class="allBody" id="homeBody">
+      <div class="logoBox">
+        <div class="ciaLogo" id="ciaLogo"></div>
       </div>
-      <div class="welcome" id="homeWelcome">
-        <% if (user) {%>
-          <a href=<%= "/users/" + user.id%> >Welcome Back Agent <%= user.codename %></a>
-        <% } %>
-      </div>
-    </body>
+      <body class ="container" id="homeContainer">
+        <div class="welcomeForm">
+          <div>
+            <a class="securityA" href="/users/signup">Verify Credentials</a>
+            <a class="securityA" href="/users/login">Establish Connection</a>
+          </div>
+        </div>
+        <div class="buttonForm" id="logoutButton">
+          <% if (user) {%>
+            <form method="post" action="users/logout?_method=DELETE">
+              <button class="securityButton" type="text">Disconnect</button>
+            </form>
+          <% } %>
+        </div>
+      </body>
+    </div>
   </div>
 </html>

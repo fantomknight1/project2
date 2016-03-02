@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>userHome</title>
-  </head>
-  <body>
-    <header>
-      <%- include ../partials/nav.html.ejs %>
-    </header>
-    <div>
-      <h1>Home Page</h1>
+  <div class="everything" id="userHomeEverything">
+    <head>
+      <meta charset="utf-8">
+      <title>userHome</title>
+      <link rel="stylesheet" href="../../css/styles.css">
+    </head>
+    <div ="allBody" id="userHomeBody">
+      <body>
+        <header>
+          <%- include ../partials/nav.html.ejs %>
+        </header>
+        <div id="userHomeH1">
+          <h1>Welcome Agent <%= user.codename %></h1>
+        </div>
+        <div class="userHomeLBody" id="userHomeInfoGadgets">
+          <div class="gadgets" id="userHomeGadgets">
+            <img class="mapScan" id="mapScanGif" src="../images/gifMapScan.gif">
+            <img class="mapScan" id="worldScanGif" src="../images/gifWorldScan.gif">
+          </div>
+          <div class="gadgets" id="userHomeGadgets2">
+            <img class="mapScan" id="soundWaveGif" src="../images/gifSoundWaves.gif">
+          </div>
+        </div>
+      </body>
     </div>
-  </body>
+  </div>
 </html>
