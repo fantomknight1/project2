@@ -12,6 +12,9 @@
       </div>
       <body class ="container" id="homeContainer">
         <div class="welcomeForm">
+          <div class="title">
+            <h1>Spy Vs Spy</h1>
+          </div>
           <div>
             <a class="securityA" href="/users/signup">Verify Credentials</a>
             <a class="securityA" href="/users/login">Establish Connection</a>
@@ -20,7 +23,7 @@
         <div class="buttonForm" id="logoutButton">
           <% if (user) {%>
             <form method="post" action="users/logout?_method=DELETE">
-              <button class="securityButton" type="text">Disconnect</button>
+              <button class="securityButton" type="submit">Disconnect</button>
             </form>
           <% } %>
         </div>

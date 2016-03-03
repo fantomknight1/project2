@@ -65,10 +65,10 @@ users.route('/:id/profile/')
 
 users.route('/logout')
   .delete(function(req, res) {
-    console.log("before delete", req.session.user)
+    console.log("before delete")
     req.session.destroy(function(err){
       res.redirect('/');
-      console.log("after delete", req.session.user)
+      console.log("after delete")
     });
   });
 

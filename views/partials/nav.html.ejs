@@ -26,8 +26,8 @@
           <li class="navLI"><a class="navA" href="/users/newUserSighting/" + user.id>New Sighting</a></li>
           <li class="navLI"><a class="navA" href="/users/mail/" + user.id>Mail</a></li>
           <li class="navLI"><a class="navA" href="/users/<%= user.id %>/profile">Profile</a></li>
-          <form method="post" action=":usersID/logout?_method=DELETE">
-            <li class="navLI"><a class="navA" href="/">Disconnect</a></li>
+          <form method="post" action="/users/logout?_method=DELETE">
+            <li class="navLI"><button class="navA" id="navButton" type="submit">Disconnect</button></li>
           </form>
         </ul>
       </div><!--/.nav-collapse -->

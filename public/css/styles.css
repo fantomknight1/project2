@@ -55,7 +55,7 @@
   display: inline-block;
   margin-bottom: 10px;
 }
-.securitybutton[type=text]{
+.securitybutton[type=submit]{
   background-color: rgba(100, 100, 100, 0.6);
   border-radius: 7px;
   font-family: "Courier New", Courier, monospace;
@@ -192,6 +192,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    font-family: "Courier New", Courier, monospace;
   }
   .navA:hover {
     background-color: black;
@@ -201,6 +202,32 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    font-family: "Courier New", Courier, monospace;
+  }
+#navButton,
+  #navButton:visited {
+    border:none;
+    background-color: rgb(40, 40, 40);;
+    opacity: 1;
+    color: green;
+    padding: 3px 4vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 15px;
+  }
+  #navButton:hover {
+    background-color: black;
+    opacity: 1;
+    color: green;
+    padding: 3px 4vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer; cursor: hand;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 15px;
   }
 #userHomeEverything{
   background: url("../images/greenBackground6.jpg") no-repeat center;
@@ -228,12 +255,22 @@
   font-size: 15px;
   font-weight: bold;
 }
+#userHomeInfoGadgets{
+  height: 50vh;
+  width: 99vw;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#missionBox{
+  height: 50vh;
+  width: 40vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 #userHomeGadgets{
-  margin-top: 75px;
   display: flex;
-  justify-content:flex-end;
   height: 150px;
-  width: 80vw;
+  width: 40vw;
 }
 #mapScanGif {
   margin-right: 2px;
@@ -247,9 +284,8 @@
 #userHomeGadgets2{
   margin-top: 5px;
   display: flex;
-  justify-content:flex-end;
   height: 30px;
-  width: 80vw;
+  width: 40vw;
 }
 #soundWaveGif{
   width: 357px;
